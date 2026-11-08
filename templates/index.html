@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Integrity Verifier</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+
+<body>
+    <div class="container">
+    <h1>Text Integrity Verification</h1>
+
+    <p>Compare two texts using SHA-256 hashing to check whether the content has changed.</p>
+
+    <div class="text-section">
+
+        <div class="text-box">
+            <label for="originalText">Original Text</label>
+
+            <textarea id="originalText"
+                placeholder="Enter original text here"></textarea>
+        </div>
+
+        <div class="text-box">
+            <label for="modifiedText">Modified Text</label>
+
+            <textarea id="modifiedText"
+                placeholder="Enter modified text here"></textarea>
+        </div>
+    </div>
+
+    <button id="compareBtn" type="button">
+        Compare Text
+    </button>
+
+
+    <div id="result" class="result" hidden>
+
+        <h2>Comparison Result</h2>
+
+        <h3>Original SHA-256 Hash</h3>
+        <p id="originalHash" class="hash"></p>
+
+        <h3>Modified SHA-256 Hash</h3>
+        <p id="modifiedHash" class="hash"></p>
+
+
+        <h3>Integrity Status</h3>
+        <p id="status"></p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
