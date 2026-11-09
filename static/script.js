@@ -58,8 +58,8 @@ compareBtn.addEventListener("click", async function () {
 
                 if (hash1[i] !== hash2[i]) {
 
-                    originalResult += <span class="different">${hash1[i]}</span>;
-                    modifiedResult += <span class="different">${hash2[i]}</span>;
+                    originalResult += '<span class="different">${hash1[i]}</span>';
+                    modifiedResult += '<span class="different">${hash2[i]}</span>';
 
                 } else {
 
