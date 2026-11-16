@@ -23,7 +23,7 @@ class TestFlaskApp(unittest.TestCase):
 
         data = response.get_json()
 
-        self.assertEqal(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertTrue(data["match"])
 
     def test_modified_text(self):

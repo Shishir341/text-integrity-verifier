@@ -58,8 +58,8 @@ compareBtn.addEventListener("click", async function () {
 
                 if (hash1[i] !== hash2[i]) {
 
-                    originalResult += '<span class="different">${hash1[i]}</span>';
-                    modifiedResult += '<span class="different">${hash2[i]}</span>';
+                    originalResult += `<span class="different">${hash1[i]}</span>`;
+                    modifiedResult += `<span class="different">${hash2[i]}</span>`;
 
                 } else {
 
@@ -97,3 +97,41 @@ compareBtn.addEventListener("click", async function () {
     }
 
 });
+
+function updateTextCounter(textareaId, wordCountId, charCountId) {
+    const textarea = document.getElementById(textareaId);
+    const wordCount = document.getElementById(wordCountId);
+    const charCount = document.getElementById(charCountId);
+
+    if (!textarea || !wordCount || !charCount) {
+        return;
+    }
+
+    function updateCounts() {
+        const text = textarea.value;
+
+        const words = text.trim() === ""
+            ? 0
+            : text.trim().split(/\s+/).length;
+
+        wordCount.textContent = words;
+        charCount.textContent = text.length;
+    }
+
+    textarea.addEventListener("input", updateCounts);
+
+    updateCounts();
+}
+
+updateTextCounter(
+    "originalText",
+    "originalWordCount",
+    "originalCharCount"
+);
+
+updateTextCounter(
+    "modifiedText",
+    "modifiedWordCount",
+    "modifiedCharCount"
+);
+

@@ -25,6 +25,9 @@
 
             <textarea id="originalText"
                 placeholder="Enter original text here"></textarea>
+                <p class="text-counter">
+    Words: <span id="originalWordCount">0</span>
+    | Characters: <span id="originalCharCount">0</span></p>
         </div>
 
         <div class="text-box">
@@ -32,6 +35,9 @@
 
             <textarea id="modifiedText"
                 placeholder="Enter modified text here"></textarea>
+                <p class="text-counter">
+    Words: <span id="modifiedWordCount">0</span>
+    | Characters: <span id="modifiedCharCount">0</span></p>
         </div>
     </div>
 
@@ -54,6 +60,46 @@
         <h3>Integrity Status</h3>
         <p id="status"></p>
     </div>
+</div>
+
+<div class="information">
+
+    <h2>Understanding SHA-256 Hashing</h2>
+
+    <h3>What is SHA-256?</h3>
+
+    <p>
+        SHA-256 stands for secure Hash Algorithm with a 256-bit
+        output. It converts text into a fixed-length hash value containing 64 hexadecimal characters.
+
+    </p>
+
+    <h3>How Does Text Intergrity Verification work?</h3>
+
+    <p>
+        The application generates a SHA-256 hash for each text entered by the user.
+        It then compares the two hash values.
+        If they match, the texts are identical.
+        If they do not match, the text content is different.
+    </p>
+
+    <h3>What is the Avalanche Effect?</h3>
+
+    <p>
+        The avalanche effect means that even a small change in the 
+        original text can produce a very different hash value.
+        For example, changing one letter or adding a full stop
+        usually changes many characters in the SHA-256 hash.
+    </p>
+
+    <h3>Why is Hashing Important?</h3>
+
+    <p>
+        Cyrptographic hashinng helps detect changes
+        in digital information. It is commonly used in cybersecurity
+        and data integrity checking. However, comparing hashes alone does not 
+        prove who created the original text.
+</p>
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
