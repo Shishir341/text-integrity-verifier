@@ -2,7 +2,7 @@
 Text Integrity Verification Application using SHA-256 and Flask
 
 ### Project Overview
-This project is a web-based application developed to check whether text content has been changed using SHA-256 cryptographic hashing. Users can enter original text and modified text. The application generates a SHA-256 hash for each input and compares the results. If both hashes match, the application shows that the text is identical. If the hashes are different, it indicates that the text has been modified. The application also highlights differences between the hash values to demonstrate the avalanche effect.
+This project is a web-based application designed to identify whether text has been changed or remains the same using the SHA-256 hashing algorithm. Users can enter two pieces of text: the original text and the modified text. The system creates a SHA-256 hash value for each text and compares them. If both hash values are the same, it means the text is identical and no changes have been made. If the hash values are different, it means the text has been modified. The application also highlights the differences between the hash values to show the avalanche effect, which explains how even a small change in text can produce a completely different hash value.
 
 ## Technologies Used
 -Python
