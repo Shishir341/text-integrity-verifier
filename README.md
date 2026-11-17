@@ -49,7 +49,7 @@ This project is a web-based application developed to check whether text content 
 
 ## Project Team
 Shishir Kandel - Backend Development and Scrum Master
-Pooja Bist - Frontend Development and Product Owner
+Pooja Bist - Frontend Development, product owner and backend development
 
 ## Project Purpose
 This application was developed as part of the Integrated Studio III project implementation assessment. It demonstrates how cryptographic hashing can be used to check text integrity and understand the avalanche effect.
