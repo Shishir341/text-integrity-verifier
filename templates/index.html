@@ -1,50 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Text Integrity Verifier</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-
 <body>
-    <div class="container">
+
+<div class="container">
+
     <h1>Text Integrity Verification</h1>
 
-    <p>Compare two texts using SHA-256 hashing to check whether the content has changed.</p>
+    <p>
+        Compare two texts using SHA-256 hashing to check
+        whether the content has changed.
+    </p>
+
+    
 
     <div class="text-section">
 
         <div class="text-box">
+
             <label for="originalText">Original Text</label>
 
-            <textarea id="originalText"
-                placeholder="Enter original text here"></textarea>
-                <p class="text-counter">
-    Words: <span id="originalWordCount">0</span>
-    | Characters: <span id="originalCharCount">0</span></p>
+            <textarea
+                id="originalText"
+                placeholder="Enter original text here"
+            ></textarea>
+
+            <p class="text-counter">
+                Words: <span id="originalWordCount">0</span>
+                | Characters: <span id="originalCharCount">0</span>
+            </p>
+
         </div>
 
         <div class="text-box">
+
             <label for="modifiedText">Modified Text</label>
 
-            <textarea id="modifiedText"
-                placeholder="Enter modified text here"></textarea>
-                <p class="text-counter">
-    Words: <span id="modifiedWordCount">0</span>
-    | Characters: <span id="modifiedCharCount">0</span></p>
+            <textarea
+                id="modifiedText"
+                placeholder="Enter modified text here"
+            ></textarea>
+
+            <p class="text-counter">
+                Words: <span id="modifiedWordCount">0</span>
+                | Characters: <span id="modifiedCharCount">0</span>
+            </p>
+
         </div>
+
     </div>
 
     <button id="compareBtn" type="button">
         Compare Text
     </button>
 
+    <p
+        id="errorMessage"
+        role="alert"
+        style="color: red;"
+        hidden
+    ></p>
+
+    
 
     <div id="result" class="result" hidden>
 
@@ -56,11 +84,84 @@
         <h3>Modified SHA-256 Hash</h3>
         <p id="modifiedHash" class="hash"></p>
 
-
         <h3>Integrity Status</h3>
         <p id="status"></p>
+
     </div>
+
+    
+
+    <div class="validation-section">
+
+        <h2>Input Validation Testing</h2>
+
+        <p>
+            Enter your own value and select its data type.
+            The application will check whether the input
+            is accepted or rejected.
+        </p>
+
+        <div class="validation-field">
+
+            <label for="testInputValue">
+                Enter Value
+            </label>
+
+            <input
+                type="text"
+                id="testInputValue"
+                placeholder="Enter a value to test"
+            >
+
+        </div>
+
+        <div class="validation-field">
+
+            <label for="testInputType">
+                Select Input Type
+            </label>
+
+            <select id="testInputType">
+
+                <option value="text">
+                    Text (String)
+                </option>
+
+                <option value="number">
+                    Number
+                </option>
+
+                <option value="boolean">
+                    Boolean
+                </option>
+
+                <option value="array">
+                    Array / List
+                </option>
+
+                <option value="null">
+                    Null
+                </option>
+
+            </select>
+
+        </div>
+
+        <button id="testInputBtn" type="button">
+            Test Input
+        </button>
+
+        <p
+            id="validationResult"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+    </div>
+
 </div>
+
+
 
 <div class="information">
 
@@ -69,37 +170,51 @@
     <h3>What is SHA-256?</h3>
 
     <p>
-        SHA-256 stands for secure Hash Algorithm with a 256-bit
-        output. It converts text into a fixed-length hash value containing 64 hexadecimal characters.
+        SHA-256 stands for Secure Hash Algorithm with
+        a 256-bit output.
 
+        It converts text into a fixed-length hash
+        value containing 64 hexadecimal characters.
     </p>
 
-    <h3>How Does Text Intergrity Verification work?</h3>
+    <h3>How Does Text Integrity Verification Work?</h3>
 
     <p>
-        The application generates a SHA-256 hash for each text entered by the user.
+        The application generates a SHA-256 hash for
+        each text entered by the user.
+
         It then compares the two hash values.
+
         If they match, the texts are identical.
+
         If they do not match, the text content is different.
     </p>
 
     <h3>What is the Avalanche Effect?</h3>
 
     <p>
-        The avalanche effect means that even a small change in the 
-        original text can produce a very different hash value.
-        For example, changing one letter or adding a full stop
-        usually changes many characters in the SHA-256 hash.
+        The avalanche effect means that even a small
+        change in the original text can produce a very
+        different hash value.
+
+        For example, changing one letter or adding
+        a full stop usually changes many characters
+        in the SHA-256 hash.
     </p>
 
     <h3>Why is Hashing Important?</h3>
 
     <p>
-        Cyrptographic hashinng helps detect changes
-        in digital information. It is commonly used in cybersecurity
-        and data integrity checking. However, comparing hashes alone does not 
+        Cryptographic hashing helps detect changes
+        in digital information.
+
+        It is commonly used in cybersecurity and
+        data integrity checking.
+
+        However, comparing hashes alone does not
         prove who created the original text.
-</p>
+    </p>
+
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
