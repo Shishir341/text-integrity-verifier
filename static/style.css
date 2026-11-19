@@ -1,5 +1,4 @@
 
-/* General Page Styling */
 
 * {
     box-sizing: border-box;
@@ -13,7 +12,7 @@ body {
     color: #333;
 }
 
-/* Main Container */
+
 
 .container {
     max-width: 1000px;
@@ -36,7 +35,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Text Comparison Section */
+
 
 .text-section {
     display: flex;
@@ -57,7 +56,7 @@ label {
     color: #333;
 }
 
-/* Textareas */
+
 
 textarea {
     width: 100%;
@@ -78,7 +77,7 @@ textarea:focus,
     box-shadow: 0 0 0 3px rgba(35, 75, 120, 0.12);
 }
 
-/* Word and Character Counters */
+
 
 .text-counter {
     margin-top: 8px;
@@ -87,7 +86,7 @@ textarea:focus,
     text-align: right;
 }
 
-/* Buttons */
+
 
 button {
     background-color: #234b78;
@@ -114,7 +113,7 @@ button:focus-visible {
     max-width: 300px;
 }
 
-/* Error Messages */
+
 
 #errorMessage:not([hidden]) {
     max-width: 600px;
@@ -127,7 +126,7 @@ button:focus-visible {
     font-weight: bold;
 }
 
-/* Comparison Result */
+
 
 .result {
     margin-top: 30px;
@@ -182,7 +181,7 @@ button:focus-visible {
  
 }
 
-/* Highlight Different Hash Characters */
+
 
 .different {
     background-color: #ffe0e0;
@@ -192,7 +191,7 @@ button:focus-visible {
     padding: 1px;
 }
 
-/* Input Validation Testing Section */
+
 
 .validation-section {
     margin-top: 40px;
@@ -230,7 +229,6 @@ button:focus-visible {
     color: #333;
 }
 
-/* Manual Input Box */
 
 .validation-section input {
     display: block;
@@ -243,7 +241,6 @@ button:focus-visible {
     font-size: 15px;
 }
 
-/* Input Type Dropdown */
 
 .validation-section select {
     display: block;
@@ -257,7 +254,7 @@ button:focus-visible {
     cursor: pointer;
 }
 
-/* Validation Button */
+
 
 #testInputBtn,
 #testInvalidBtn {
@@ -278,7 +275,7 @@ button:focus-visible {
     background-color: #173653;
 }
 
-/* Validation Result Message */
+
 
 #validationResult:not(:empty) {
     margin-top: 20px;
@@ -291,7 +288,7 @@ button:focus-visible {
     overflow-wrap: anywhere;
 }
 
-/* Information Section */
+
 
 .information {
     max-width: 1000px;
@@ -318,7 +315,6 @@ button:focus-visible {
     color: #444;
 }
 
-/* Responsive Design */
 
 @media (max-width: 700px) {
 
