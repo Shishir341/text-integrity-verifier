@@ -14,7 +14,7 @@ def generate_hash(text):
     return hash_value.hexdigest()
 
 
-# Compare two texts using SHA-256
+
 def compare_texts(original_text, modified_text):
 
     original_hash = generate_hash(original_text)
